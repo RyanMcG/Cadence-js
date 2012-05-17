@@ -7,68 +7,97 @@
  */
 
 (function (context) {
-    var Cadence = function (element, endEvent, callback, engine) {
-      var cleanData = {'content': '', 'cadence': {}};
-      var cadence = {'data': cleanData};
-      var engines = {};
+  (function ($) {
+    $.fn.cadence = function (finishedCallback, userOptions) {
+      var options = {
+        userPhraseSel: ".phrase",
+        givenPhraseSel: "#training-phrase",
+        givenPhrase: null,
+        alertCallback: alert
+      };
+      $.extend(options, userOptions);
+      var resetData = {string: '', timeline: []};
+      var cadence = {data: resetData};
 
-      // Create default engines for doing the acutal monitoring
-      engines.jquery = function () {
-        var $ = jquery;
-        this.listen = function () {
-          console.log(this);
-          var el = $(this._element);
-        };
+      cadence.reset = function () {
+        this.data = resetData;
       };
 
-
-      cadence.setCallback = function (cb) {
-        this.engine._callback = cb;
-      };
-
-      cadence.setElement = function (el, listen) {
-        this.engine._element = el;
-        if (arguments.length < 2 || listen === true) {
-          this.startListening();
-        }
-      };
-
-      cadence.setEndEvent = function (event) {
-        this.engine._endEvent = event;
-      };
-
-      cadence.setEngine = function (eng) {
-        if (typeof eng === "string") {
-          try {
-            cadence.engine = engines[eng];
-          } catch (err) {
-            throw Exception("Unsupported engine [\"" + eng + "\"] " +
-                "specified.");
+      cadence.cleanUp = function () {
+        this.data.string = this.data.timeline[
+          this.data.timeline.length - 1].value;
+        this.data.timeline.sort(function (a, b) {
+          return a.time - b.time;
+        });
+        for (var i = 0, length = this.data.timeline.length; i < length; i++) {
+          eve = this.data.timeline[i];
+          if (i === 0) {
+            eve.timeDifference = eve.time;
+          } else {
+            var last_eve = this.data.timeline[i - 1];
+            eve.timeDifference = eve.time - last_eve.time;
           }
-        } else {
-          cadence.engine = eng;
         }
       };
 
-      // Set internal values based on arguments
-      if (arguments.length >= 1) {
-        cadence.setElement(element);
-      }
-      if (arguments.length >= 2) {
-        cadence.setCallback(callback);
-      }
-      if (arguments.length < 3) {
-        cadence.engine = engines.jQuery();
-      } else {
-        cadence.setEngine(engine);
+      var phraseEl = this.find(options.userPhraseSel);
+      phraseEl.attr("autocomplete", "no");
+      var givenPhrase = options.givenPhrase;
+      if (givenPhrase === null) {
+        givenPhrase = $(options.givenPhraseSel).text();
       }
 
-      cadence.startListening = function () {
-        this.engine.listen(this._element);
+      cadence.checkPhrase = function (phrase) {
+        if (givenPhrase === phrase) {
+          return 0;
+        } else if (phrase === givenPhrase.substring(0, phrase.length)) {
+          return 1;
+        } else {
+          return -1;
+        }
       };
 
-      return cadence;
-    };
+      var first = true;
+      var timeStart;
+      cadence.logKeyEvent = function (event) {
+        if (first) {
+          first = false;
+          timeStart = event.timeStamp;
+          lastTime = event.timeStamp;
+        }
+        cadence.data.timeline.push({
+            which: event.which,
+            type: event.type,
+            value: event.target.value,
+            time: (event.timeStamp - timeStart)
+            //_event: event
+        });
 
-    context.Cadence = Cadence;
+        var check = cadence.checkPhrase(givenPhrase, event.target.value);
+        if (0 === check) {
+          cadence.cleanUp();
+          finishedCallback(cadence.data);
+          cadence.reset();
+        } else if(check < 0) {
+          cadence.reset();
+          options.alertCallback("You messed up!.");
+          console.log("You messed up.");
+          console.log(event.target.value);
+        } else {
+          console.log(event.target.value);
+        }
+      };
+
+      // Set up event listeners
+      phraseEl.keydown(cadence.logKeyEvent);
+      phraseEl.keyup(cadence.logKeyEvent);
+
+      // Prevent the default form submission.
+      this.submit(function (event) {
+        event.preventDefault();
+      });
+
+      return this;
+    };
+  })(jQuery);
 })(this);
