@@ -6,8 +6,7 @@
  * Author: Ryan McGowan
  */
 
-(function (context) {
-  (function ($) {
+(function ($) {
     $.fn.cadence = function (finishedCallback, userOptions) {
       var options = {
         userPhraseSel: ".phrase",
@@ -99,5 +98,4 @@
 
       return this;
     };
-  })(jQuery);
-})(this);
+})(jQuery);
