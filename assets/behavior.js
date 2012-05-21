@@ -13,7 +13,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
           "commentsOnly": true,
           "name": "Markdown"
         },
-        "sourcePath": "/home/roin/repo/cadence/resources/cadence.js/README.md",
+        "sourcePath": "/home/ryanmcg/repo/cadence/resources/cadence.js/README.md",
         "projectPath": "README.md",
         "targetPath": "index",
         "firstHeader": {
@@ -30,8 +30,8 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "type": "heading",
               "data": {
                 "level": 2,
-                "title": "A typing style monitor for input fields",
-                "slug": "a-typing-style-monitor-for-input-fields"
+                "title": "A typing style monitor for input fields built as a jQuery plugin.",
+                "slug": "a-typing-style-monitor-for-input-fields-built-as-a-jquery-plugin"
               },
               "depth": 2,
               "children": [
@@ -71,8 +71,8 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                   "type": "heading",
                   "data": {
                     "level": 3,
-                    "title": "If you are interested in learning more. . .",
-                    "slug": "if-you-are-interested-in-learning-more--"
+                    "title": "Read more about typing style auth",
+                    "slug": "read-more-about-typing-style-auth"
                   },
                   "depth": 3
                 }
@@ -88,8 +88,8 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
           "type": "heading",
           "data": {
             "level": 2,
-            "title": "A typing style monitor for input fields",
-            "slug": "a-typing-style-monitor-for-input-fields"
+            "title": "A typing style monitor for input fields built as a jQuery plugin.",
+            "slug": "a-typing-style-monitor-for-input-fields-built-as-a-jquery-plugin"
           },
           "depth": 2,
           "children": [
@@ -129,8 +129,8 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "type": "heading",
               "data": {
                 "level": 3,
-                "title": "If you are interested in learning more. . .",
-                "slug": "if-you-are-interested-in-learning-more--"
+                "title": "Read more about typing style auth",
+                "slug": "read-more-about-typing-style-auth"
               },
               "depth": 3
             }
@@ -146,7 +146,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
           "singleLineComment": ["//"],
           "name": "JavaScript"
         },
-        "sourcePath": "/home/roin/repo/cadence/resources/cadence.js/cadence.js",
+        "sourcePath": "/home/ryanmcg/repo/cadence/resources/cadence.js/cadence.js",
         "projectPath": "cadence.js",
         "targetPath": "cadence",
         "firstHeader": {
