@@ -1,4 +1,3 @@
 {
-  "globs" : ["README.md", "cadence.js"],
-  "github" : true
+  "glob" : ["README.md", "cadence.js"]
 }
