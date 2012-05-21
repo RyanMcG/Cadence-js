@@ -13,7 +13,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
           "commentsOnly": true,
           "name": "Markdown"
         },
-        "sourcePath": "/home/ryanmcg/repo/cadence/resources/cadence.js/README.md",
+        "sourcePath": "/home/roin/repo/cadence/resources/cadence.js/README.md",
         "projectPath": "README.md",
         "targetPath": "index",
         "firstHeader": {
@@ -146,20 +146,20 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
           "singleLineComment": ["//"],
           "name": "JavaScript"
         },
-        "sourcePath": "/home/ryanmcg/repo/cadence/resources/cadence.js/cadence.js",
+        "sourcePath": "/home/roin/repo/cadence/resources/cadence.js/cadence.js",
         "projectPath": "cadence.js",
         "targetPath": "cadence",
         "firstHeader": {
           "type": "heading",
           "data": {
             "level": 1,
-            "title": "Cadence.js",
-            "slug": "cadencejs",
+            "title": "cadence.js jQuery Plugin",
+            "slug": "cadencejs-jquery-plugin",
             "isFileHeader": true
           },
           "depth": 1
         },
-        "title": "Cadence.js"
+        "title": "cadence.js jQuery Plugin"
       },
       "depth": 1,
       "outline": []
@@ -172,7 +172,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
           "singleLineComment": ["//"],
           "name": "JavaScript"
         },
-        "sourcePath": "/home/ryanmcg/repo/cadence/resources/cadence.js/examples.js",
+        "sourcePath": "/home/roin/repo/cadence/resources/cadence.js/examples.js",
         "projectPath": "examples.js",
         "targetPath": "examples",
         "title": "examples"
