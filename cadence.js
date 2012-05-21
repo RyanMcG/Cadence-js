@@ -102,23 +102,9 @@
         phraseEl.val("");
       };
 
-
-      // A callback function for when there is a keydown event in the user input
-      // field.
-      cadence.logKeyDown = function (event) {
-        //console.log(givenPhraseCodes[position] + " " + event.which + " " + position);
-        if (givenPhraseCodes[position] === event.keyCode) {
-          cadence.timeline.push(event);
-        } else {
-          cadence.reset(true);
-        }
-        //position++;
-      };
-
       // A callback function for when there is a keyup event in the user input
       // field.
       cadence.logKeyUp = function (event) {
-        //console.log(givenPhraseCodes[position] + " " + event.keyCode + " " + position);
         if (givenPhraseCodes[position] === event.keyCode) {
           cadence.timeline.push(event);
           if (position === endPosition) {
@@ -133,7 +119,6 @@
       };
 
       // Set up event listeners
-      //phraseEl.keydown(cadence.logKeyDown);
       phraseEl.keyup(cadence.logKeyUp);
 
       // Prevent the default form submission.
