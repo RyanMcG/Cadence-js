@@ -1,10 +1,8 @@
-/*
- * Cadence.js
- *
- * A typing style monitor for input fields
- *
- * Author: Ryan McGowan
- */
+// # Cadence.js
+//
+// A typing style monitor for input fields
+//
+// Author: Ryan McGowan
 
 (function ($) {
     $.fn.cadence = function (finishedCallback, userOptions) {
