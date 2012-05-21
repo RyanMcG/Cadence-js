@@ -137,6 +137,32 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
           ]
         }
       ]
+    }, {
+      "type": "file",
+      "data": {
+        "language": {
+          "nameMatchers": [".js"],
+          "pygmentsLexer": "javascript",
+          "singleLineComment": ["//"],
+          "name": "JavaScript"
+        },
+        "sourcePath": "/home/ryanmcg/repo/cadence/resources/cadence.js/cadence.js",
+        "projectPath": "cadence.js",
+        "targetPath": "cadence",
+        "firstHeader": {
+          "type": "heading",
+          "data": {
+            "level": 1,
+            "title": "Cadence.js",
+            "slug": "cadencejs",
+            "isFileHeader": true
+          },
+          "depth": 1
+        },
+        "title": "Cadence.js"
+      },
+      "depth": 1,
+      "outline": []
     }
   ];
 
