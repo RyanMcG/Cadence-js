@@ -1,4 +1,4 @@
-// # cadence.js jQuery Plugin
+// # cadence.js (Source)
 //
 // A typing style monitor for input fields
 //
