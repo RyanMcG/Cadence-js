@@ -34,22 +34,35 @@
       // And merge them with what the user gives us.
       $.extend(options, userOptions);
 
+      // Some local variables
 
+      // The cadence object
       var cadence = {timeline: []};
 
+      // Define what the "given phrase" is (i.e. what the user should type in.
       var givenPhrase = options.givenPhrase;
       if (givenPhrase === null) {
         givenPhrase = $(options.givenPhraseSel).text();
       }
+      // Turn the given phrase into an array of key codes
       var givenPhraseCodes = toKeyCodes(givenPhrase);
 
+      // Specify where we are in the cadence
       var position = 0;
+      // Computer the final position ahead of time.
       var endPosition = givenPhrase.length - 1;
 
+      // The input field the user is typing the cadence into
       var phraseEl = this.find(options.userPhraseSel);
 
+      // Set autocomplete to off since the user must type in the whole phrase
+      // anyways.
       phraseEl.attr("autocomplete", "off");
 
+      // Immediately before calling the user supplied callback function we need
+      // to clean up our data. This takes the vector of array events held in
+      // cadence.timeline and creates a more usable vector of event data in
+      // cadence.result.
       cadence.cleanUp = function () {
         this.result = {timeline: []};
         this.timeline.sort(function (a, b) {
@@ -76,6 +89,9 @@
         this.result.phrase = completeStr;
       };
 
+      // The reset function is called whenever the user input field needs to be
+      // reset. This occurs either on completion of entering a phrase or when
+      // the user enters anything incorrectly.
       cadence.reset = function (alert) {
         position = 0;
         if (typeof alert !== 'undefined' && alert) {
@@ -87,6 +103,8 @@
       };
 
 
+      // A callback function for when there is a keydown event in the user input
+      // field.
       cadence.logKeyDown = function (event) {
         //console.log(givenPhraseCodes[position] + " " + event.which + " " + position);
         if (givenPhraseCodes[position] === event.keyCode) {
@@ -97,6 +115,8 @@
         //position++;
       };
 
+      // A callback function for when there is a keyup event in the user input
+      // field.
       cadence.logKeyUp = function (event) {
         //console.log(givenPhraseCodes[position] + " " + event.keyCode + " " + position);
         if (givenPhraseCodes[position] === event.keyCode) {
@@ -121,6 +141,7 @@
         event.preventDefault();
       });
 
+      // That's all folks!
       return this;
     };
 })(jQuery);
