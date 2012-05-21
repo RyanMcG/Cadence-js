@@ -153,13 +153,13 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
           "type": "heading",
           "data": {
             "level": 1,
-            "title": "cadence.js jQuery Plugin",
-            "slug": "cadencejs-jquery-plugin",
+            "title": "cadence.js (Source)",
+            "slug": "cadencejs-source",
             "isFileHeader": true
           },
           "depth": 1
         },
-        "title": "cadence.js jQuery Plugin"
+        "title": "cadence.js (Source)"
       },
       "depth": 1,
       "outline": []
