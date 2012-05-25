@@ -109,8 +109,9 @@
             cadence.cleanUp();
             finishedCallback($.extend({}, cadence.result));
             cadence.reset();
+          } else {
+            position++;
           }
-          position++;
         } else {
           cadence.reset(true);
         }
