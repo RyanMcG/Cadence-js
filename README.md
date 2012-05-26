@@ -45,7 +45,9 @@ cadence object.
                 // The keycode converted to a character for your convenience.
                 character: 'C'
             },
-            { // ...another object like the one above. },
+            {
+                // ...another object like the one above.
+            },
             // ...and more. One for each key the user types in.
         ]
     }
