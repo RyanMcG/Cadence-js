@@ -74,7 +74,18 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                     "title": "Read more about typing style auth",
                     "slug": "read-more-about-typing-style-auth"
                   },
-                  "depth": 3
+                  "depth": 3,
+                  "children": [
+                    {
+                      "type": "heading",
+                      "data": {
+                        "level": 5,
+                        "title": "Documentation",
+                        "slug": "documentation"
+                      },
+                      "depth": 5
+                    }
+                  ]
                 }
               ]
             }
@@ -132,7 +143,18 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                 "title": "Read more about typing style auth",
                 "slug": "read-more-about-typing-style-auth"
               },
-              "depth": 3
+              "depth": 3,
+              "children": [
+                {
+                  "type": "heading",
+                  "data": {
+                    "level": 5,
+                    "title": "Documentation",
+                    "slug": "documentation"
+                  },
+                  "depth": 5
+                }
+              ]
             }
           ]
         }
