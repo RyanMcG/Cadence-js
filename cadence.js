@@ -20,7 +20,7 @@
       // Create default options
       var options = {
         userPhraseSel: ".phrase",
-        givenPhraseSel: "#training-phrase",
+        givenPhraseSel: "#given-phrase",
         givenPhrase: null,
         debug: false,
         alertCallback: function (msg, debug) {
