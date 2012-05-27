@@ -83,3 +83,12 @@ See [more examples](http://ryanmcg.github.com/Cadence-js/examples.html).
 ### Read more about typing style auth
 
 *   [Authentication via Keystroke Dynamics](http://avirubin.com/keystroke.ps)
+
+##### Documentation
+
+To generate documentation you'll want to use groc (it's kinda like docco).
+
+    npm install -g groc
+    # Now that you've installed groc just run it
+    cd /path/to/this/project
+    groc
